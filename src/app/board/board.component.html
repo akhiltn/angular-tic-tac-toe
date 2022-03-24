@@ -1,9 +1,8 @@
-<p>Tic Tac Toe</p>
-<h2 *ngIf="winner != ''">Winner is {{winner}}</h2>
-<mat-grid-list cols="3" rowHeight="2:1">
+<h1 style="text-align: center; font-family: 'Copperplate', Fantasy; font-size: 5vh; color: chartreuse;">Tic Tac Toe</h1>
+<button mat-raised-button color="primary" (click)="newGame()" style="margin: 10px;">New Game</button>
+<h2 *ngIf="winner != ''" style="color: cyan;">Winner is {{winner}}</h2>
+<mat-grid-list cols="3" rowHeight="2:1" gutterSize="10px">
   <ng-container *ngFor="let gridTile of grid; let i=index">
     <mat-grid-tile (click)="makeAMove(i)" [ngStyle]="{'background': gridTile.color}"><app-square [value]="gridTile.value"></app-square></mat-grid-tile>
   </ng-container>
 </mat-grid-list>
-
-<button mat-raised-button color="primary" (click)="newGame()">Reset</button>
